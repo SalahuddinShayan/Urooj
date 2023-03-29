@@ -58,9 +58,15 @@
             </div>
         </nav>
         <section class= "wcontainer">
-        <section class="mb-4" style="width:90%; margin-top:60px; padding: 30px; align-content: center; margin-left: 5%; margin-right: 5%;"><h1>Overview</h1>
-        <p>Urooj works in the field of Youth Development, Capacity Building, Inclusion, and Community Building. Our main goal is to bring equity and equality in society and create a conducive environment for the growth of Youths.</p>
-        </section>
+        <section class="mb-4" style="width:90%; padding: 30px; align-content: center; margin-left: 5%; margin-right: 5%;" >
+  <h1 class="center">V<span class="yellow">i</span>s<span class="yellow">i</span>on</h1>
+  <p class="center">To build leadership among youth for social change and justice. Urooj aims to achieve this by developing Youth. A just and inclusive society where every human being has equitable opportunities and adequate capabilities to harness their potential.</p>
+  </section>
+  
+  <section class="mb-4" style="width:90%; padding: 30px; align-content: center; margin-left: 5%; margin-right: 5%;" >
+  <h1 class="center">M<span class="yellow">i</span>ss<span class="yellow">i</span>on</h1>
+  <p class="center">To promote the socially deprived youths to realise their rights to education, leadership and employment through inclusive policies and actions.</p>
+  </section>
         </section>
         
 <section class ="wcontainer">

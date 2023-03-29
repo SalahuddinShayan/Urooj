@@ -10,8 +10,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" >
         <link rel="stylesheet" href="stylesheet.css" >
     </head>
-    <body>
-        <nav class="navbar navbar-light bg-warning navbar-expand-md fixed-top" >
+    <body class="bgy">
+        <nav class="navbar navbar-light bg-warning navbar-expand-md sticky-top" >
             <a href="home" class="navbar-brand"><img src="UROOJ LOGO-02.png" width="90" height="40" alt=""></a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar" >
                 <span class="navbar-toggler-icon"></span>
@@ -48,79 +48,22 @@
                             <a href="careers">Careers</a>
                           </div>
                     </li>
-                    <li class="nav-item"><a href="blog" class="nav-link">Blog</a></li>
-                </ul>
+                    <li class="nav-item "><a href="blog" class="nav-link">Blog</a></li>
+               </ul>
+               <ul class="navbar-nav ms-auto">
+               <li class="nav-item "><a href= "https://www.facebook.com/uroojind" target="_blank"> <img alt="" src="flogo.png" class= "icon" ></a></li>
+               <li class="nav-item "><a  href= "https://www.linkedin.com/company/uroojind/" target="_blank"><img alt="" src="Llogo.png" class= "icon" ></a></li>
+               <li class="nav-item "><a  href= "https://instagram.com/uroojind?igshid=ZDdkNTZiNTM=" target="_blank"><img alt="" src="ilogo.png" class= "icon" ></a></li>
+               </ul>          
             </div>
         </nav>
         
-        <!--Carousel Wrapper-->
-  <div id="carousel-example-2" class="carousel slide carousel-fade" data-bs-ride="carousel">
-    <!--Indicators-->
-    <ol class="carousel-indicators">
-      <li data-bs-target="#carousel-example-2" data-bs-slide-to="0" class="active"></li>
-      <li data-bs-target="#carousel-example-2" data-bs-slide-to="1"></li>
-      <li data-bs-target="#carousel-example-2" data-bs-slide-to="2"></li>
-      <li data-bs-target="#carousel-example-2" data-bs-slide-to="3"></li>
-    </ol>
-    <!--/.Indicators-->
-    <!--Slides-->
-    <div class="carousel-inner" role="listbox">
-      <div class="carousel-item active">
-        <div class="view ratio ratio-21x9">
-          <img class="d-block w-100 " src="https://via.placeholder.com/450" alt="First slide">
+   <section class="wcontainer"> 
+   <div class="view ratio ratio-21x9">
+          <img class="d-block w-100 " src="urooj1.jpg" alt="First slide">
           <div class="mask rgba-black-light"></div>
         </div>
-        <div class="carousel-caption">
-          <h3 style="color:rgb(0, 251, 255);" class="h3-responsive">Caption 1</h3>
-          <p style="color:rgb(0, 251, 255);">Caption 1</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <!--Mask color-->
-        <div class="view ratio ratio-21x9">
-          <img class="d-block w-100" src="https://via.placeholder.com/450" alt="Second slide">
-          <div class="mask rgba-black-light"></div>
-        </div>
-        <div class="carousel-caption">
-          <h3 style="color:rgb(0, 251, 255);" class="h3-responsive">Caption 2</h3>
-          <p style="color:rgb(0, 251, 255);">Caption 2</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <!--Mask color-->
-        <div class="view ratio ratio-21x9">
-          <img class="d-block w-100" src="https://via.placeholder.com/450" alt="Third slide">
-          <div class="mask rgba-black-slight"></div>
-        </div>
-        <div class="carousel-caption">
-          <h3 style="color:rgb(0, 251, 255);" class="h3-responsive">Caption 3</h3>
-          <p style="color:rgb(0, 251, 255);">Caption 3</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <!--Mask color-->
-        <div class="view ratio ratio-21x9">
-          <img class="d-block w-100" src="https://via.placeholder.com/450" alt="Fourth slide">
-          <div class="mask rgba-black-strong"></div>
-        </div>
-        <div class="carousel-caption">
-          <p style="color:rgb(0, 251, 255);">Caption 4</p>
-          <h3 style="color: rgb(0, 251, 255);" class="h3-responsive">Caption 4</h3>
-          <a href="#contact" class="btn btn-primary mb-2 mb-md-0">Button</a>
-        </div>
-      </div>
-    </div>
-    <!--/.Slides-->
-    <!--Controls-->
-    <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </a>
-    <a class="carousel-control-next" href="#carousel-example-2" role="button" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </a>
-    <!--/.Controls-->
-  </div>
-  <!--/.Carousel Wrapper-->
+  
   
   <section class="mb-4" style="width:90%; padding: 30px; align-content: center; margin-left: 5%; margin-right: 5%;" >
   <h1 class="center">V<span class="yellow">i</span>s<span class="yellow">i</span>on</h1>
@@ -135,38 +78,92 @@
   <section class="mb-4" style="width:90%; padding: 30px; align-content: center; margin-left: 5%; margin-right: 5%;" >
   <h1 class="center">About t<span class="yellow">h</span>e Organ<span class="yellow">i</span>zat<span class="yellow">i</span>on</h1>
   <p class="center">Urooj is a social development organization that aims to help the marginalized and the downtrodden through various programs in the field of education, skill development, etc. It works mostly on the marginalized youths because young people are the future of a country. We also engage in civil discourse and advocate for equity and inclusion for all.</p>
+  <p class="center">We envision a society where religion, culture, and race are not barriers to equity and equality, where all people are treated with dignity and respect and the voice of every citizen plays an integral role in creating inclusive communities that encourages participation by all.</p>
+  <p class="center">We aim to build a cadre of leaders who will engage with the marginalized population at the grassroots. They will understand the bottlenecks to their well-being, their belief systems, and aspirations. We want the fellows to work alongside the structural units to understand the impact of the system and power structures on people. We hope to bring forward future leaders who exhibit commitment, compassion, and a will to bring a change. We want marginalized youths to get exposed to social movements, people's participation in the political process, voluntary services organization, and social building activities.</p>
+  <p class="center">In order to address the problems mentioned above, we have established Urooj Fellowship which is an exposure program for Marginalized Youth to increase their worldview and make them understand themselves.</p>
   </section>
   
   <section class="mb-4" style="width:90%; padding: 30px; align-content: center; margin-left: 5%; margin-right: 5%;" >
   <h1 class="center">W<span class="yellow">h</span>y yout<span class="yellow">h</span>?</h1>
   <p class="center">Youth plays a pivotal role in the development of society or a nation at large. We believe that the potential of every youth should be realized specially who are coming from the deprived or marginalized sections of a society.</p>
   </section>
-  
+  </section>
   <section class= "bgy" >
-  <div Style = "margin-top: 30px; width:80%; padding: 30px; align-content: center; margin-left: 5%; margin-right: 5%;" class = "row">
-  	<div class="col-lg-4 col-sm-6  py-3 ">
-  		<h4>Quick Links</h4><br>
-  		<div class = "row">
-  		<div class= "col-4 py-2 ">
-  		<a href="donate" >Donate</a><br>
-  		<a href="volunteer" >Volunteer</a><br>
-        <a href="contactus" >Contact US</a><br>
-  		</div>
-  		<div class= "col-4 py-2 lp">
-  		<a href="fellowship/internship" >Fellowship/Internship</a><br>
-        <a href="careers" >Careers</a><br>
-  		</div>
-        
-  	</div>	
-  	</div>
-  	<div class="col-lg-4 col-sm-6  py-3 center">
-  		<h4 >Follow Us</h4>
-  		<a  href= "https://www.facebook.com/uroojind"><img alt="" src="flogo.png" class= "icon"></a>
-  		<a  href= "https://www.linkedin.com/company/uroojind/"><img alt="" src="Llogo.png" class= "icon"></a>
-  		<a  href= "https://instagram.com/uroojind?igshid=ZDdkNTZiNTM="><img alt="" src="ilogo.png" class= "icon"></a>
-  		
-  	</div>
-  	<div class="col-md-4 text-center">
+  <section class ="wcontainer">
+<section  id="contact" class="mb-4" style="width:90%; padding: 30px; align-content: center; margin-left: 5%; margin-right: 5%;" >
+
+  <!--Section heading-->
+  <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+  <!--Section description-->
+  <p class="text-center w-responsive mx-auto mb-5">Do you want to book a Table? or perhaps organize an event? or A question you want to to see answered? <br> or you just want to say something. Whatever it is, don't be shy just let us know.  </p>
+
+  <div class="row">
+
+      <!--Grid column-->
+      <div class="col-md-9 mb-md-0 mb-5">
+          <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+              <!--Grid row-->
+              <div class="row">
+
+                  <!--Grid column-->
+                  <div class="col-md-6" style="margin-bottom: 20px;">
+                      <div class="md-form mb-0">
+                        <label for="name" class="">Your name</label>  
+                        <input type="text" id="name" name="name" class="form-control">
+                      </div>
+                  </div>
+                  <!--Grid column-->
+
+                  <!--Grid column-->
+                  <div class="col-md-6" style="margin-bottom: 20px;">
+                      <div class="md-form mb-0">
+                        <label for="email" class="">Your email</label>
+                        <input type="text" id="email" name="email" class="form-control">
+                      </div>
+                  </div>
+                  <!--Grid column-->
+
+              </div>
+              <!--Grid row-->
+
+              <!--Grid row-->
+              <div class="row" style="margin-bottom: 20px;">
+                  <div class="col-md-12">
+                      <div class="md-form mb-0">
+                        <label for="subject" class="">Subject</label>  
+                        <input type="text" id="subject" name="subject" class="form-control">
+                      </div>
+                  </div>
+              </div>
+              <!--Grid row-->
+
+              <!--Grid row-->
+              <div class="row" style="margin-bottom: 20px;">
+
+                  <!--Grid column-->
+                  <div class="col-md-12">
+
+                      <div class="md-form">
+                        <label for="message">Your message</label>  
+                        <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                      </div>
+
+                  </div>
+              </div>
+              <!--Grid row-->
+
+          </form>
+
+          <div class="text-center text-md-left">
+              <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+          </div>
+          <div class="status"></div>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-md-3 text-center">
           <ul class="list-unstyled mb-0">
               <li><i class="fas fa-map-marker-alt fa-2x"></i>
                   <p>Patna, Bihar 800007, India</p>
@@ -177,11 +174,13 @@
               </li>
 
               <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                  <p>contact@urooj.com</p>
+                  <p>uroojind@gmail.com</p>
               </li>
           </ul>
         </div>
-  </div>
+      </div>
+    </section>
+  </section>
   </section>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" ></script>
