@@ -10,7 +10,7 @@ import com.urooj.entity.Admin;
 @Repository
 public interface AdminRepository extends JpaRepository<Admin, String> {
 	
-	@Query(value = "SELECT Password FROM Admin WHERE login = :login ", nativeQuery = true)
+	@Query(value = "SELECT Password FROM admin WHERE login = :login ", nativeQuery = true)
     String  getp(@Param("login") String login);
 	
 
