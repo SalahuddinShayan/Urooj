@@ -1,8 +1,11 @@
 package com.urooj.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -25,6 +28,26 @@ public class AdminController {
         return "index";           
     }
 	
+	@RequestMapping("/createadmin")                     
+    public String Admincreat(Model m) {
+        try {
+        	@SuppressWarnings("unused")
+			List<Admin> L = adminRepo.findAll();
+        	return "alreadycreated";
+        }
+        catch(NullPointerException e){
+        	m.addAttribute("command", new Admin());
+        	return "createadmin";
+        }
+		           
+    }
+	
+	@RequestMapping("/saveadmin")
+    public String save(@ModelAttribute("admin") Admin admin){    
+    	adminRepo.save(admin);    
+        return "admincreated";   
+    }
+	
 	@RequestMapping("/adminlogin")
 	public String adminlogin(Model m) {
 		m.addAttribute("command", new Admin());
@@ -34,11 +57,7 @@ public class AdminController {
 	@RequestMapping("/alogin")    
     public String login(@RequestParam String login,@RequestParam String password,Model m){    
     	String p = adminRepo.getp(login);
-    	if(p.isEmpty()&& password.equals("urooj_patna@123")&& login.equals("urooj_patna")) {
-    		return "admin";
-    	}
-    	
-    	else if(password.equals(p)) {
+    	if(password.equals(p)) {
     		return "admin";
     	}
     	else {
