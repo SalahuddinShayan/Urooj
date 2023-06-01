@@ -21,8 +21,6 @@
      <th>Id</th>
      <th>Name</th>
      <th>Position</th>
-     <th>Occupation</th>
-     <th>DOJ</th>
      <th>Bio</th>
      <th>Password</th>
      <th>Photo</th>
@@ -34,11 +32,9 @@
       <td>${member.memberId}</td>
       <td>${member.memberName}</td>
       <td>${member.position}</td>
-      <td>${member.occupation}</td>
-      <td>${member.DOJ}</td>
       <td>${member.bio}</td>
       <td>${member.password}</td>
-      <td><img src ="${member.picture}"></td>
+      <td><img width="100" src ="${member.picture}"></td>
       <td><a href="deletemember/${member.memberId}">Delete</a></td> 
      </tr>
     </c:forEach>
@@ -48,16 +44,14 @@
 <h1>Add a new Member or Update an existing one</h1> 
 
 <form method="post" action="savamember" enctype="multipart/form-data">
-       <input name="MemberId" placeholder= "ID" type= "text">
-       <input name="MemberName" placeholder= "Name" type= "text">
-       <input name="Position" placeholder= "Position" type= "text">
-       <input name="Occupation" placeholder= "Occupation" type= "text">
-       <input name="DOJ" placeholder= "DOJ" type= "Date">
+       <input name="MemberId" placeholder= "ID" type= "text" required>
+       <input name="MemberName" placeholder= "Name" type= "text" required>
+       <input name="Position" placeholder= "Position" type= "text" required>
        <lable for= "Pic">Pic:</lable>
-       <input name="Pic" placeholder= "Pic" type= "file"><br>
+       <input name="Pic" placeholder= "Pic" type= "file" required><br>
        <lable for= "Bio">Bio:</lable>
-       <textarea type="text" id="Bio" name="Bio" rows="2" class="form-control md-textarea"></textarea>
-       <input name="password" placeholder= "Password" type= "text">
+       <textarea type="text" id="Bio" name="Bio" rows="2" class="form-control md-textarea" required></textarea>
+       <input name="password" placeholder= "Password" type= "text" required>
        <input type="submit" value="Add Staff" />
        </form> 
 

@@ -67,7 +67,7 @@
    <div Style = "margin-top: 30px;" class ="row">
    <div class="col-lg-3 col-sm-9"><img src="${member.picture}"  Style="width:90%;  padding-left: 50px; padding-top: 30px; padding-bottom: 30px;" align = "middle" alt="member"></div>
    <div class="col-lg-9 col-sm-9"><h2>${member.memberName}</h2><br>
-   <h3>Our ${member.position} and a/an ${member.occupation}.</h3><br>
+   <h3>${member.position}</h3><br>
    <p>${member.bio}</p>
    </div>
    </div>
@@ -83,7 +83,7 @@
   <!--Section heading-->
   <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
   <!--Section description-->
-  <p class="text-center w-responsive mx-auto mb-5">Do you want to book a Table? or perhaps organize an event? or A question you want to see answered? <br> or you just want to say something. Whatever it is, don't be shy just let us know.  </p>
+  <p class="text-center w-responsive mx-auto mb-5">Do you want to book a Table? or perhaps organize an event? or A question you want to to see answered? <br> or you just want to say something. Whatever it is, don't be shy just let us know.  </p>
 
   <div class="row">
 
@@ -95,7 +95,7 @@
               <div class="row">
 
                   <!--Grid column-->
-                  <div class="col-md-6" style="margin-bottom: 20px;">
+                  <div class="col-md-4" style="margin-bottom: 20px;">
                       <div class="md-form mb-0">
                         <label for="name" class="">Your name</label>  
                         <input type="text" id="name" name="name" class="form-control">
@@ -104,10 +104,19 @@
                   <!--Grid column-->
 
                   <!--Grid column-->
-                  <div class="col-md-6" style="margin-bottom: 20px;">
+                  <div class="col-md-4" style="margin-bottom: 20px;">
                       <div class="md-form mb-0">
                         <label for="email" class="">Your email</label>
                         <input type="text" id="email" name="email" class="form-control">
+                      </div>
+                  </div>
+                  <!--Grid column-->
+                  
+                  <!--Grid column-->
+                  <div class="col-md-4" style="margin-bottom: 20px;">
+                      <div class="md-form mb-0">
+                        <label for="Phone" class="">Your Phone No.</label>
+                        <input type="text" id="Phone" name="Phone" class="form-control">
                       </div>
                   </div>
                   <!--Grid column-->
@@ -158,7 +167,7 @@
               </li>
 
               <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                  <p>98xxxxxx01</p>
+                  <p>9708110793</p>
               </li>
 
               <li><i class="fas fa-envelope mt-4 fa-2x"></i>

@@ -87,7 +87,7 @@
               <div class="row">
 
                   <!--Grid column-->
-                  <div class="col-md-6" style="margin-bottom: 20px;">
+                  <div class="col-md-4" style="margin-bottom: 20px;">
                       <div class="md-form mb-0">
                         <label for="name" class="">Your name</label>  
                         <input type="text" id="name" name="name" class="form-control">
@@ -96,10 +96,19 @@
                   <!--Grid column-->
 
                   <!--Grid column-->
-                  <div class="col-md-6" style="margin-bottom: 20px;">
+                  <div class="col-md-4" style="margin-bottom: 20px;">
                       <div class="md-form mb-0">
                         <label for="email" class="">Your email</label>
                         <input type="text" id="email" name="email" class="form-control">
+                      </div>
+                  </div>
+                  <!--Grid column-->
+                  
+                  <!--Grid column-->
+                  <div class="col-md-4" style="margin-bottom: 20px;">
+                      <div class="md-form mb-0">
+                        <label for="Phone" class="">Your Phone No.</label>
+                        <input type="text" id="Phone" name="Phone" class="form-control">
                       </div>
                   </div>
                   <!--Grid column-->
@@ -150,7 +159,7 @@
               </li>
 
               <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                  <p>98xxxxxx01</p>
+                  <p>9708110793</p>
               </li>
 
               <li><i class="fas fa-envelope mt-4 fa-2x"></i>

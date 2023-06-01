@@ -1,13 +1,9 @@
 package com.urooj.entity;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name="Team_Members")
@@ -22,12 +18,6 @@ public class TeamMembers {
 	
 	@Column(name="Position")
 	private String Position;
-	
-	@Column(name="Occupation")
-	private String Occupation;
-	
-	@Column(name="DOJ")
-	private String DOJ;
 	
 	@Column(name="Picture")
 	private String Picture;
@@ -62,22 +52,6 @@ public class TeamMembers {
 
 	public void setPosition(String position) {
 		Position = position;
-	}
-
-	public String getOccupation() {
-		return Occupation;
-	}
-
-	public void setOccupation(String occupation) {
-		Occupation = occupation;
-	}
-
-	public String getDOJ() {
-		return DOJ;
-	}
-
-	public void setDOJ(String dOJ) {
-		DOJ = dOJ;
 	}
 
 	public String getPicture() {
