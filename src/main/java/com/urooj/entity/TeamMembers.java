@@ -1,5 +1,7 @@
 package com.urooj.entity;
 
+import java.beans.Transient;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -78,6 +80,11 @@ public class TeamMembers {
 		Bio = bio;
 	}
 	
-	
+	 @Transient
+	    public String getPhotosImagePath() {
+	        if (Picture == null || MemberId == 0) return null;
+	         
+	        return "/team-photos/" + MemberId + "/" + Picture;
+	    }
 
 }

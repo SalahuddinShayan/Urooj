@@ -1,10 +1,10 @@
 package com.urooj.controller;
 
-import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.ParseException;
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.urooj.Utility.FileUploadUtil;
 import com.urooj.entity.TeamMembers;
 import com.urooj.repository.TeamMembersRepository;
 
@@ -23,9 +24,6 @@ public class TeamMembersController {
 	
 	@Autowired
 	TeamMembersRepository TeamRepo;
-	
-	@Autowired
-    private HttpServletRequest request;
 	
 	@RequestMapping("/teammembers")
 	public String memberlist(Model model) {
@@ -47,14 +45,21 @@ public class TeamMembersController {
 		member.setBio(bio);
 		member.setPicture(pic.getOriginalFilename());
 		TeamRepo.save(member);
-		String filePath = request.getServletContext().getRealPath("/");
-		System.out.println(filePath);
-		pic.transferTo(new File(filePath+pic.getOriginalFilename()));
+		String uploadDir = "team-photos/"+Id;
+		FileUploadUtil.saveFile(uploadDir, pic.getOriginalFilename(), pic);
 		return "forward:/teammembers";
 	}
 	
 	@RequestMapping(value="/deletemember/{id}",method = RequestMethod.GET)
 	public String deletemember(@PathVariable int id){
+		TeamMembers member = TeamRepo.getReferenceById(id);
+		try {
+		      Path file = Paths.get(member.getPhotosImagePath());
+		      Files.deleteIfExists(file);
+		    } catch (IOException e) {
+		      throw new RuntimeException("Error: " + e.getMessage());
+		    }
+		
 		TeamRepo.deleteById(id);
 		return "forward:/teammembers";
 	}
