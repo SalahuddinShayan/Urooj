@@ -48,6 +48,7 @@ public class TeamMembersController {
 		member.setPicture(pic.getOriginalFilename());
 		TeamRepo.save(member);
 		String filePath = request.getServletContext().getRealPath("/");
+		System.out.println(filePath);
 		pic.transferTo(new File(filePath+pic.getOriginalFilename()));
 		return "forward:/teammembers";
 	}

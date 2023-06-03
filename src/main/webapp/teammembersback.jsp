@@ -34,7 +34,8 @@
       <td>${member.position}</td>
       <td>${member.bio}</td>
       <td>${member.password}</td>
-      <td><img width="100" src ="${member.picture}"></td>
+      <td><img width="100" src ="${member.picture}" alt="${member.picture}"></td>
+      <script>console.log("${member.picture}")</script>
       <td><a href="deletemember/${member.memberId}">Delete</a></td> 
      </tr>
     </c:forEach>
