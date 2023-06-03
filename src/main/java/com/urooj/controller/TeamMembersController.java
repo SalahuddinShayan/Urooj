@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.urooj.Utility.FileUploadUtil;
 import com.urooj.entity.TeamMembers;
@@ -34,7 +35,7 @@ public class TeamMembersController {
 	}
 	
 	@RequestMapping(value ="/savamember", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-	public String savemember(@RequestParam("MemberId") int Id, @RequestParam("MemberName") String Name, 
+	public RedirectView  savemember(@RequestParam("MemberId") int Id, @RequestParam("MemberName") String Name, 
 			@RequestParam("Position") String position, @RequestParam("password") String password, 
 			@RequestParam("Bio") String bio, @RequestParam("Pic") MultipartFile pic) throws IllegalStateException, IOException, ParseException {
 		TeamMembers member = new TeamMembers();
@@ -47,11 +48,11 @@ public class TeamMembersController {
 		TeamRepo.save(member);
 		String uploadDir = "team-photos/"+Id;
 		FileUploadUtil.saveFile(uploadDir, pic.getOriginalFilename(), pic);
-		return "forward:/teammembers";
+		return new RedirectView("/teammembers", true);
 	}
 	
 	@RequestMapping(value="/deletemember/{id}",method = RequestMethod.GET)
-	public String deletemember(@PathVariable int id){
+	public RedirectView  deletemember(@PathVariable int id){
 		TeamMembers member = TeamRepo.getReferenceById(id);
 		try {
 		      Path file = Paths.get(member.getPhotosImagePath());
@@ -61,7 +62,7 @@ public class TeamMembersController {
 		    }
 		
 		TeamRepo.deleteById(id);
-		return "forward:/teammembers";
+		return new RedirectView("/teammembers", true);
 	}
 	
 	@RequestMapping("/ourteam")
