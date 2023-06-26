@@ -20,22 +20,20 @@
     <tr>
      <th>Id</th>
      <th>Name</th>
-     <th>Position</th>
+     <th>Batch</th>
      <th>Bio</th>
-     <th>Password</th>
      <th>Photo</th>
      <th>Delete</th>
      
     </tr>
-    <c:forEach var="member" items="${Members}">
+    <c:forEach var="fellow" items="${Fellows}">
      <tr>
-      <td>${member.memberId}</td>
-      <td>${member.memberName}</td>
-      <td>${member.position}</td>
-      <td>${member.bio}</td>
-      <td>${member.password}</td>
-      <td><img width="100" src ="<c:out value='${pageContext.request.contextPath}/member-image/${member.memberId}'/>" alt="${member.memberId}"></td>
-      <td><a href="deletemember/${member.memberId}">Delete</a></td> 
+      <td>${fellow.fellowId}</td>
+      <td>${fellow.fName}</td>
+      <td>${fellow.batch}</td>
+      <td>${fellow.bio}</td>
+      <td><img width="100" src ="<c:out value='${pageContext.request.contextPath}/fellow-image/${fellow.fellowId}'/>" alt="${fellow.fellowId}"></td>
+      <td><a href="deletefellow/${fellow.fellowId}">Delete</a></td> 
      </tr>
     </c:forEach>
    </table>
@@ -43,15 +41,14 @@
 
 <h1>Add a new Member or Update an existing one</h1> 
 
-<form method="post" action="savamember" enctype="multipart/form-data">
-       <input name="MemberId" placeholder= "ID" type= "text" required>
-       <input name="MemberName" placeholder= "Name" type= "text" required>
-       <input name="Position" placeholder= "Position" type= "text" required>
+<form method="post" action="savafellow" enctype="multipart/form-data">
+       <input name="FellowId" placeholder= "ID" type= "text" required>
+       <input name="FellowName" placeholder= "Name" type= "text" required>
+       <input name="Batch" placeholder= "Batch" type= "text" required>
        <lable for= "Pic">Pic:</lable>
        <input name="Pic" placeholder= "Pic" type= "file" required><br>
        <lable for= "Bio">Bio:</lable>
        <textarea type="text" id="Bio" name="Bio" rows="2" class="form-control md-textarea" required></textarea>
-       <input name="password" placeholder= "Password" type= "text" required>
        <input type="submit" value="Add Staff" />
        </form> 
 

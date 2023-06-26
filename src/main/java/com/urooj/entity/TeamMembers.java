@@ -1,10 +1,9 @@
 package com.urooj.entity;
 
-import java.beans.Transient;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
@@ -21,8 +20,9 @@ public class TeamMembers {
 	@Column(name="Position")
 	private String Position;
 	
+	@Lob
 	@Column(name="Picture")
-	private String Picture;
+	private byte[] Picture;
 	
 	@Column(name="Password")
 	private String Password;
@@ -56,11 +56,11 @@ public class TeamMembers {
 		Position = position;
 	}
 
-	public String getPicture() {
+	public byte[] getPicture() {
 		return Picture;
 	}
 
-	public void setPicture(String picture) {
+	public void setPicture(byte[] picture) {
 		Picture = picture;
 	}
 
@@ -80,11 +80,5 @@ public class TeamMembers {
 		Bio = bio;
 	}
 	
-	 @Transient
-	    public String getPhotosImagePath() {
-	        if (Picture == null || MemberId == 0) return null;
-	         
-	        return "/team-photos/" + MemberId + "/" + Picture;
-	    }
 
 }

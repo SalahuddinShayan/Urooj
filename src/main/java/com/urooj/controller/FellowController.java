@@ -20,60 +20,50 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.view.RedirectView;
 
-
-import com.urooj.entity.TeamMembers;
-import com.urooj.repository.TeamMembersRepository;
+import com.urooj.entity.Fellows;
+import com.urooj.repository.FellowsRepository;
 
 @Controller
-public class TeamMembersController {
+public class FellowController {
 	
 	@Autowired
-	TeamMembersRepository TeamRepo;
+	FellowsRepository fellowRepo;
 	
-	@RequestMapping("/teammembers")
+	@RequestMapping("/fellows")
 	public String memberlist(Model model) {
-		model.addAttribute("Members",TeamRepo.findAll());
-		model.addAttribute("command",new TeamMembers());
-	    return "teammembersback";
-	    
+		model.addAttribute("Fellows",fellowRepo.findAll());
+		model.addAttribute("command",new Fellows());
+	    return "fellowsback";
 	}
 	
-	@GetMapping("/member-image/{id}")
+	@GetMapping("/fellow-image/{id}")
 	@ResponseBody
-	void showImage(@PathVariable("id") int id, HttpServletResponse response, Optional<TeamMembers> members)
+	void showImage(@PathVariable("id") int id, HttpServletResponse response, Optional<Fellows> members)
 			throws ServletException, IOException {
-		members = TeamRepo.findById(id);
+		members = fellowRepo.findById(id);
 		response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
 		response.getOutputStream().write(members.get().getPicture());
 		response.getOutputStream().close();
 	}
 	
-	@RequestMapping(value ="/savamember", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-	public RedirectView  savemember(@RequestParam("MemberId") int Id, @RequestParam("MemberName") String Name, 
-			@RequestParam("Position") String position, @RequestParam("password") String password, 
+	
+	@RequestMapping(value ="/savafellow", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	public RedirectView  savemember(@RequestParam("FellowId") int Id, @RequestParam("FellowName") String Name, @RequestParam("Batch") int batch,
 			@RequestParam("Bio") String bio, @RequestParam("Pic") MultipartFile pic) throws IllegalStateException, IOException, ParseException {
-		TeamMembers member = new TeamMembers();
-		member.setMemberId(Id);
-		member.setMemberName(Name);
-		member.setPosition(position);
-		member.setPassword(password);
-		member.setBio(bio);
-		member.setPicture(pic.getBytes());
-		TeamRepo.save(member);
-		return new RedirectView("/teammembers", true);
+		Fellows fellow = new Fellows();
+		fellow.setFellowId(Id);
+		fellow.setfName(Name);
+		fellow.setBatch(batch);
+		fellow.setPicture(pic.getBytes());
+		fellowRepo.save(fellow);
+		return new RedirectView("/fellows", true);
 	}
 	
-	@RequestMapping(value="/deletemember/{id}",method = RequestMethod.GET)
+	@RequestMapping(value="/deletefellow/{id}",method = RequestMethod.GET)
 	public RedirectView  deletemember(@PathVariable int id){
 		
-		TeamRepo.deleteById(id);
-		return new RedirectView("/teammembers", true);
+		fellowRepo.deleteById(id);
+		return new RedirectView("/fellows", true);
 	}
 	
-	@RequestMapping("/ourteam")
-	public String team(Model model) {
-		model.addAttribute("Members",TeamRepo.findAll());
-		return "team";
-	}
-
 }

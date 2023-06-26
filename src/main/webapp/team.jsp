@@ -65,7 +65,7 @@
    
    <c:forEach var="member" items="${Members}">
    <div Style = "margin-top: 30px;" class ="row">
-   <div class="col-lg-3 col-sm-9"><img src="${member.picture}"  Style="width:90%;  padding-left: 50px; padding-top: 30px; padding-bottom: 30px;" align = "middle" alt="member"></div>
+   <div class="col-lg-3 col-sm-9"><img src="<c:out value='${pageContext.request.contextPath}/member-image/${member.memberId}'/>" alt="${member.memberId}""  Style="width:90%;  padding-left: 50px; padding-top: 30px; padding-bottom: 30px;" align = "middle" alt="member"></div>
    <div class="col-lg-9 col-sm-9"><h2>${member.memberName}</h2><br>
    <h3>${member.position}</h3><br>
    <p>${member.bio}</p>
