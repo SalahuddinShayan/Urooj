@@ -31,10 +31,13 @@ public class TeamMembersController {
 	TeamMembersRepository TeamRepo;
 	
 	@RequestMapping("/teammembers")
-	public String memberlist(Model model) {
-		model.addAttribute("Members",TeamRepo.findAll());
-		model.addAttribute("command",new TeamMembers());
-	    return "teammembersback";
+	public String memberlist(Model model,@RequestParam("admin") String admin) {
+		if(admin!=null) {
+			model.addAttribute("Members",TeamRepo.findAll());
+			model.addAttribute("command",new TeamMembers());
+		    return "teammembersback";
+		}
+		return "error";
 	    
 	}
 	
@@ -50,8 +53,9 @@ public class TeamMembersController {
 	
 	@RequestMapping(value ="/savamember", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public RedirectView  savemember(@RequestParam("MemberId") int Id, @RequestParam("MemberName") String Name, 
-			@RequestParam("Position") String position, @RequestParam("password") String password, 
+			@RequestParam("Position") String position, @RequestParam("password") String password,@RequestParam("admin") String admin, 
 			@RequestParam("Bio") String bio, @RequestParam("Pic") MultipartFile pic) throws IllegalStateException, IOException, ParseException {
+		if(admin!=null) {
 		TeamMembers member = new TeamMembers();
 		member.setMemberId(Id);
 		member.setMemberName(Name);
@@ -60,14 +64,22 @@ public class TeamMembersController {
 		member.setBio(bio);
 		member.setPicture(pic.getBytes());
 		TeamRepo.save(member);
-		return new RedirectView("/teammembers", true);
+		RedirectView redirectView= new RedirectView("/teammembers",true);
+		redirectView.addStaticAttribute("admin",admin);
+	    return redirectView;
+		}
+		return new RedirectView("/error", true);
 	}
 	
-	@RequestMapping(value="/deletemember/{id}",method = RequestMethod.GET)
-	public RedirectView  deletemember(@PathVariable int id){
-		
+	@RequestMapping(value="/deletemember")
+	public RedirectView  deletemember(@RequestParam("MemberId") int id,@RequestParam("admin") String admin){
+		if(admin!=null) {
 		TeamRepo.deleteById(id);
-		return new RedirectView("/teammembers", true);
+		RedirectView redirectView= new RedirectView("/teammembers",true);
+		redirectView.addStaticAttribute("admin",admin);
+	    return redirectView;
+		}
+		return new RedirectView("/error", true);
 	}
 	
 	@RequestMapping("/ourteam")

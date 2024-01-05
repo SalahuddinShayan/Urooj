@@ -11,7 +11,7 @@
     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 </head>
-<body class="bgyo">
+<body class="bgy">
 <div class= "login">
 <form:form method="post" action="alogin"> 
 

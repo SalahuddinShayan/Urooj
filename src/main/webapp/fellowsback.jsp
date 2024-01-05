@@ -33,7 +33,12 @@
       <td>${fellow.batch}</td>
       <td>${fellow.bio}</td>
       <td><img width="100" src ="<c:out value='${pageContext.request.contextPath}/fellow-image/${fellow.fellowId}'/>" alt="${fellow.fellowId}"></td>
-      <td><a href="deletefellow/${fellow.fellowId}">Delete</a></td> 
+      <td><form method="post" action="deletefellow">
+      		<input name="admin"  value="${admin}" style="display:none;"/>
+      		<input name="FellowId"  value="${fellow.fellowId}" style="display:none;"/>
+      		<input class ="btn btn-primary" type="submit" value="Delete" />
+      		</form>
+      </td> 
      </tr>
     </c:forEach>
    </table>
@@ -49,6 +54,7 @@
        <input name="Pic" placeholder= "Pic" type= "file" required><br>
        <lable for= "Bio">Bio:</lable>
        <textarea type="text" id="Bio" name="Bio" rows="2" class="form-control md-textarea" required></textarea>
+       <input name="admin"  value="${admin}" style="display:none;"/>
        <input type="submit" value="Add Staff" />
        </form> 
 

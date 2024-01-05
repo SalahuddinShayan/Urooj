@@ -29,11 +29,14 @@ public class FellowController {
 	@Autowired
 	FellowsRepository fellowRepo;
 	
-	@RequestMapping("/fellows")
-	public String memberlist(Model model) {
+	@RequestMapping("/fellowsback")
+	public String memberlist(Model model,@RequestParam("admin") String admin) {
+		if(admin!=null) {
 		model.addAttribute("Fellows",fellowRepo.findAll());
 		model.addAttribute("command",new Fellows());
 	    return "fellowsback";
+		}
+		return "error";
 	}
 	
 	@GetMapping("/fellow-image/{id}")
@@ -48,22 +51,31 @@ public class FellowController {
 	
 	
 	@RequestMapping(value ="/savafellow", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-	public RedirectView  savemember(@RequestParam("FellowId") int Id, @RequestParam("FellowName") String Name, @RequestParam("Batch") int batch,
+	public RedirectView  savemember(@RequestParam("FellowId") int Id, @RequestParam("FellowName") String Name, @RequestParam("Batch") int batch,@RequestParam("admin") String admin,
 			@RequestParam("Bio") String bio, @RequestParam("Pic") MultipartFile pic) throws IllegalStateException, IOException, ParseException {
+		if(admin!=null) {
 		Fellows fellow = new Fellows();
 		fellow.setFellowId(Id);
 		fellow.setfName(Name);
 		fellow.setBatch(batch);
 		fellow.setPicture(pic.getBytes());
 		fellowRepo.save(fellow);
-		return new RedirectView("/fellows", true);
+		RedirectView redirectView= new RedirectView("/fellows",true);
+		redirectView.addStaticAttribute("admin",admin);
+	    return redirectView;
+		}
+		return new RedirectView("/error", true);
 	}
 	
-	@RequestMapping(value="/deletefellow/{id}",method = RequestMethod.GET)
-	public RedirectView  deletemember(@PathVariable int id){
-		
+	@RequestMapping(value="/deletefellow")
+	public RedirectView  deletemember(@RequestParam("FellowId") int id,@RequestParam("admin") String admin){
+		if(admin!=null) {
 		fellowRepo.deleteById(id);
-		return new RedirectView("/fellows", true);
+		RedirectView redirectView= new RedirectView("/fellows",true);
+		redirectView.addStaticAttribute("admin",admin);
+	    return redirectView;
+		}
+		return new RedirectView("/error", true);
 	}
 	
 }
