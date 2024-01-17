@@ -20,13 +20,10 @@ public class MessageController {
 	MessageRepository messRepo;
 	
 	@RequestMapping("/messages")
-	public String memberlist(Model model,@RequestParam("admin") String admin) {
-		if(admin!=null) {
+	public String memberlist(Model model) {
 			model.addAttribute("messages",messRepo.findAll());
 		    return "messages";
 		}
-		return "error";
-	}
 	
 
 	@RequestMapping(value ="/savemessage", method = RequestMethod.POST)

@@ -15,25 +15,17 @@
 <body class="bgy">
 <div class = "login ">
 <h2 class="center">Welcome Admin! What do you want to do?</h2>
-<p  class="right"><a onclick="myFunction()" class ="btn btn-primary" href ="home" >Logout</a></p><br>
 <div class="center">
 	<form method="post" action="teammembers">    
-         <input name="admin"  value="${admin}" style="display:none;"/>  
          <input class ="btn btn-primary" type="submit" value="Team Members" />    
     </form>
     <form class="center" method="post" action="fellowsback">    
-         <input name="admin"  value="${admin}" style="display:none;"/>  
          <input class ="btn btn-primary" type="submit" value="Fellows" />    
     </form>
     <form class="center" method="post" action="messages">    
-         <input name="admin"  value="${admin}" style="display:none;"/>  
          <input class ="btn btn-primary" type="submit" value="Messages" />    
     </form>
 </div>
 </div>
-<script type="text/javascript">
-function myFunction() {
-	session.invalidate()
-</script>
 </body>
 </html>

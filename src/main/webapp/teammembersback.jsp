@@ -36,7 +36,6 @@
       <td>${member.password}</td>
       <td><img width="100" src ="<c:out value='${pageContext.request.contextPath}/member-image/${member.memberId}'/>" alt="${member.memberId}"></td>
       <td><form method="post" action="deletemember">
-      		<input name="admin"  value="${admin}" readonly="true" style="display:none;"/>
       		<input name="MemberId"  value="${member.memberId}" readonly="true" style="display:none;"/>
       		<input class ="btn btn-primary" type="submit" value="Delete" />
       		</form>
@@ -57,7 +56,6 @@
        <lable for= "Bio">Bio:</lable>
        <textarea type="text" id="Bio" name="Bio" rows="2" class="form-control md-textarea" required></textarea>
        <input name="password" placeholder= "Password" type= "text" required>
-       <input name="admin"  value="${admin}" style="display:none;"/>
        <input type="submit" value="Add Staff" />
        </form> 
 

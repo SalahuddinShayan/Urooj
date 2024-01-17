@@ -31,14 +31,13 @@ public class AdminController {
 	@RequestMapping("/admin")
 	public String adminlogin(Model m) {
 		m.addAttribute("command", new Admin());
-		return "adminlogin";
+		return "admin";
 	}
 	
 	@RequestMapping("/alogin")    
-    public String login(@RequestParam String login,@RequestParam String password,HttpSession session){    
+    public String login(@RequestParam String login,@RequestParam String password){    
     	String p = adminRepo.getp(login);
     	if(password.equals(p)) {
-    		session.setAttribute("admin",login);
     		return "admin";
     	}
     	else {
