@@ -1,7 +1,5 @@
 package com.urooj.controller;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,6 +50,61 @@ public class AdminController {
 	@RequestMapping("/mission&vision")                     
     public String mission() {
         return "mission&vision";           
+    }
+	
+	@RequestMapping("/storyofchange")                     
+    public String story() {
+        return "storyofchange";           
+    }
+	
+	@RequestMapping("/presscovrage")                     
+    public String presscovrage() {
+        return "presscovrage";           
+    }
+	
+	@RequestMapping("/impact")                     
+    public String impact() {
+        return "impact";           
+    }
+	
+	@RequestMapping("/testimonial")                     
+    public String testimonial() {
+        return "testimonial";           
+    }
+	
+	@RequestMapping("/vocationaltraining")                     
+    public String vocationaltraining() {
+        return "vocationaltraining";           
+    }
+	
+	@RequestMapping("/donate")                     
+    public String donate() {
+        return "donate";           
+    }
+	
+	@RequestMapping("/volunteer")                     
+    public String volunteer() {
+        return "volunteer";           
+    }
+	
+	@RequestMapping("/contactus")                     
+    public String contactus() {
+        return "contactus";           
+    }
+	
+	@RequestMapping("/fellowship")                     
+    public String fellowship() {
+        return "fellowshipinternship";           
+    }
+	
+	@RequestMapping("/careers")                     
+    public String careers() {
+        return "careers";           
+    }
+	
+	@RequestMapping("/blog")                     
+    public String blog() {
+        return "blog";           
     }
 
 }

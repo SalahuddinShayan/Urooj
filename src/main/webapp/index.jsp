@@ -46,7 +46,7 @@
                             <a href="donate">Donate</a>
                             <a href="volunteer">Volunteer</a>
                             <a href="contactus">Contact US</a>
-                            <a href="fellowship/internship">Fellowship/Internship</a>
+                            <a href="fellowship">Fellowship/Internship</a>
                             <a href="careers">Careers</a>
                           </div>
                     </li>

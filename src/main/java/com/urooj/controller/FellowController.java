@@ -67,4 +67,10 @@ public class FellowController {
 	    return redirectView;
 		}
 	
+	@RequestMapping("/fellowshipprograms")
+	public String fellow(Model model) {
+		model.addAttribute("Fellows",fellowRepo.findAll());
+		return "fellow";
+	}
+	
 }

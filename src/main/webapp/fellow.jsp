@@ -1,16 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Overview</title>
+        <title>Fellows</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" >
         <link rel="stylesheet" href="stylesheet.css" >
     </head>
-    <body class= "bgy">
+    <body class="bgy">
         <nav class="navbar navbar-light bg-warning navbar-expand-md sticky-top" >
             <a href="home" class="navbar-brand"><img src="UROOJ LOGO-02.png" width="90" height="40" alt=""></a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar" >
@@ -48,28 +51,33 @@
                             <a href="careers">Careers</a>
                           </div>
                     </li>
-                    <li class="nav-item"><a href="blog" class="nav-link">Blog</a></li>
-                </ul>
-                <ul class="navbar-nav ms-auto">
-                <li class="nav-item "><a  href= "https://www.facebook.com/uroojind" target="_blank"> <img alt="" src="flogo.png" class= "icon" ></a></li>
-                <li class="nav-item "><a  href= "https://www.linkedin.com/company/uroojind/" target="_blank"><img alt="" src="Llogo.png" class= "icon" ></a></li>
-                <li class="nav-item "><a  href= "https://instagram.com/uroojind?igshid=ZDdkNTZiNTM=" target="_blank"><img alt="" src="ilogo.png" class= "icon" ></a></li>
-                </ul>
+                    <li class="nav-item "><a href="blog" class="nav-link">Blog</a></li>
+               </ul>
+               <ul class="navbar-nav ms-auto">
+               <li class="nav-item "><a href= "https://www.facebook.com/uroojind" target="_blank"> <img alt="" src="flogo.png" class= "icon" ></a></li>
+               <li class="nav-item "><a  href= "https://www.linkedin.com/company/uroojind/" target="_blank"><img alt="" src="Llogo.png" class= "icon" ></a></li>
+               <li class="nav-item "><a  href= "https://instagram.com/uroojind?igshid=ZDdkNTZiNTM=" target="_blank"><img alt="" src="ilogo.png" class= "icon" ></a></li>
+               </ul>          
             </div>
         </nav>
-        <section class= "wcontainer">
-        <section class="mb-4" style="width:90%; padding: 30px; align-content: center; margin-left: 5%; margin-right: 5%;" >
-  <h1 class="center">V<span class="yellow">i</span>s<span class="yellow">i</span>on</h1>
-  <p class="center">To build leadership among youth for social change and justice. Urooj aims to achieve this by developing Youth. A just and inclusive society where every human being has equitable opportunities and adequate capabilities to harness their potential.</p>
-  </section>
-  
-  <section class="mb-4" style="width:90%; padding: 30px; align-content: center; margin-left: 5%; margin-right: 5%;" >
-  <h1 class="center">M<span class="yellow">i</span>ss<span class="yellow">i</span>on</h1>
-  <p class="center">To promote the socially deprived youths to realise their rights to education, leadership and employment through inclusive policies and actions.</p>
-  </section>
-        </section>
         
-<section class ="wcontainer">
+   <section class="wcontainer"> 
+   
+   <c:forEach var="fellow" items="${Fellows}">
+   <div Style = "margin-top: 30px;" class ="row">
+   <div class="col-lg-3 col-sm-9"><img src="<c:out value='${pageContext.request.contextPath}/fellow-image/${fellow.fellowId}'/>" alt="${fellow.fellowId}" Style="width:90%;  padding-left: 50px; padding-top: 30px; padding-bottom: 30px;" align = "middle" alt="member"></div>
+   <div class="col-lg-9 col-sm-9"><h2>${fellow.fName}</h2><br>
+   <h3>${fellow.batch}</h3><br>
+   <p>${fellow.bio}</p>
+   </div>
+   </div>
+   </c:forEach>
+  
+  
+  
+  </section>
+  <section Style = "margin-top: 50px;" >
+  <section class ="wcontainer">
 <section  id="contact" class="mb-4" style="width:90%; padding: 30px; align-content: center; margin-left: 5%; margin-right: 5%;" >
 
   <!--Section heading-->
@@ -170,6 +178,8 @@
       </div>
     </section>
   </section>
+  </section>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" ></script>
         </body>
 </html>
