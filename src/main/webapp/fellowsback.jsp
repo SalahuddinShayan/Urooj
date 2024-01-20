@@ -53,7 +53,7 @@
        <input name="Pic" placeholder= "Pic" type= "file" required><br>
        <lable for= "Bio">Bio:</lable>
        <textarea type="text" id="Bio" name="Bio" rows="2" class="form-control md-textarea" required></textarea>
-       <input type="submit" value="Add Staff" />
+       <input type="submit" value="Add Fellow" />
        </form> 
 
 </body>

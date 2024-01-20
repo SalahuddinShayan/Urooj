@@ -65,8 +65,8 @@
    
    <c:forEach var="fellow" items="${Fellows}">
    <div Style = "margin-top: 30px;" class ="row">
-   <div class="col-lg-3 col-sm-9"><img src="<c:out value='${pageContext.request.contextPath}/fellow-image/${fellow.fellowId}'/>" alt="${fellow.fellowId}" Style="width:90%;  padding-left: 50px; padding-top: 30px; padding-bottom: 30px;" align = "middle" alt="member"></div>
-   <div class="col-lg-9 col-sm-9"><h2>${fellow.fName}</h2><br>
+   <div class="col-lg-3 col-sm-9"><div class ="circle"><img src="<c:out value='${pageContext.request.contextPath}/fellow-image/${fellow.fellowId}'/>" alt="${fellow.fellowId}" Style="width:100%;"   alt="member"></div></div>
+   <div class="col-lg-9 col-sm-9" Style="padding-left:30px; padding-top:20px;"><h2>${fellow.fName}</h2><br>
    <h3>${fellow.batch}</h3><br>
    <p>${fellow.bio}</p>
    </div>

@@ -54,6 +54,7 @@ public class FellowController {
 		fellow.setFellowId(Id);
 		fellow.setfName(Name);
 		fellow.setBatch(batch);
+		fellow.setBio(bio);
 		fellow.setPicture(pic.getBytes());
 		fellowRepo.save(fellow);
 		RedirectView redirectView= new RedirectView("/fellows",true);
