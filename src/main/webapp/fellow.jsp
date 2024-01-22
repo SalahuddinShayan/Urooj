@@ -67,7 +67,7 @@
    <div Style = "margin-top: 30px;" class ="row">
    <div class="col-lg-3 col-sm-9"><div class ="circle"><img src="<c:out value='${pageContext.request.contextPath}/fellow-image/${fellow.fellowId}'/>" alt="${fellow.fellowId}" Style="width:100%;"   alt="member"></div></div>
    <div class="col-lg-9 col-sm-9" Style="padding-left:30px; padding-top:20px;"><h2>${fellow.fName}</h2><br>
-   <h3>${fellow.batch}</h3><br>
+   <h3>Cohort:${fellow.batch}</h3><br>
    <p>${fellow.bio}</p>
    </div>
    </div>
