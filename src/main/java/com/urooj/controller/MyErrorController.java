@@ -32,6 +32,7 @@ public class MyErrorController implements ErrorController {
 		    }
 		 model.addAttribute("title", Title);
 		 model.addAttribute("errorMessage", ErrorMessage);
+		 model.addAttribute("errorCode",status);
 	     return "error";
 	}
 

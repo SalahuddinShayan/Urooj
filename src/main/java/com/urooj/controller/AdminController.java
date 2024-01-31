@@ -27,9 +27,15 @@ public class AdminController {
 
 	
 	@RequestMapping("/admin")
+	public String admin() {
+		
+		return "admin";
+	}
+	
+	@RequestMapping("/adminlogin")
 	public String adminlogin(Model m) {
 		m.addAttribute("command", new Admin());
-		return "admin";
+		return "adminlogin";
 	}
 	
 	@RequestMapping("/alogin")    
